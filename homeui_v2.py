@@ -5,6 +5,7 @@ import tkinter as tk
 import os
 import shutil
 from ATS import *
+import ATS
 
 class homeui:
 
@@ -96,7 +97,7 @@ class homeui:
            btn2=Button(text="Result",command=self.result,cursor="hand2",font=("times new roman",15),width=20,height=2)                 
            btn2.place(x=230,y=0)
 
-           btn3=Button(text="Activity",cursor="hand2",font=("times new roman",15),width=20,height=2)                 
+           btn3=Button(text="Activity",command=self.act,cursor="hand2",font=("times new roman",15),width=20,height=2)                 
            btn3.place(x=460,y=0)
 
            btn4=Button(text="Upload job description",cursor="hand2",font=("times new roman",15),width=50,height=10)                 
@@ -156,7 +157,7 @@ class homeui:
         label2=Label(text="Resume upload",font=('times new roman',20,),fg="royalblue",bg="lightblue")               
         label2.place(x=600,y=20)
 
-        btn1=Button(text="Home",cursor="hand2",font=("times new roman",15),width=20,height=2)                 
+        btn1=Button(text="Home",command=self.shome,cursor="hand2",font=("times new roman",15),width=20,height=2)                 
         btn1.place(x=0,y=0)
 
         btn8=Button(text="logout",command=self.stulog,cursor="hand2",font=("times new roman",15),width=10,height=1)                 
@@ -184,8 +185,33 @@ class homeui:
      # print(datapath.name)
      shutil.copy(filetype,"E:/")
      job_score=resume_scan(filetype)
-     print(job_score)
+     #print(job_score)
      
+
+
+
+
+      
+    
+     self.root.title("Applicants tracking system")
+     self.root.geometry("1366x700+0+0")
+     frame_input=Frame(self.root,bg="lightblue")
+     frame_input.place(x=0,y=0,height=700,width=1366)
+
+     label2=Label(text="Result",font=('times new roman',20,),fg="royalblue",bg="lightblue")               
+     label2.place(x=600,y=20)
+
+     label3=Label(text=ATS.match,font=('times new roman',20,),fg="royalblue",bg="lightblue")
+     label3.place(x=600,y=100)
+
+
+     btn1=Button(text="Home",command=self.shome,cursor="hand2",font=("times new roman",15),width=20,height=2)                 
+     btn1.place(x=0,y=0)
+
+     btn2=Button(text="Ok",command=self.tech,cursor="hand2",font=("times new roman",15),width=10,height=1)
+     btn2.place(x=600,y=550)
+
+        
   
    def webd(self):
 
@@ -474,14 +500,7 @@ class homeui:
         btn3=Button(text="Activity",command=self.act,cursor="hand2",font=("times new roman",15),width=20,height=2)                 
         btn3.place(x=460,y=0)
 
-        btn4=Button(text="Log",cursor="hand2",font=("times new roman",15),width=40,height=5)                 
-        btn4.place(x=475,y=100)
 
-        btn5=Button(text="Task",cursor="hand2",font=("times new roman",15),width=40,height=5)                 
-        btn5.place(x=475,y=300)
-
-        btn6=Button(text="Log",cursor="hand2",font=("times new roman",15),width=40,height=5)                 
-        btn6.place(x=475,y=500)
 
 
 
@@ -504,6 +523,14 @@ class homeui:
         btn3=Button(text="Activity",cursor="hand2",font=("times new roman",15),width=20,height=2)                 
         btn3.place(x=460,y=0)
 
+        btn4=Button(text="Log",cursor="hand2",font=("times new roman",15),width=40,height=5)                 
+        btn4.place(x=475,y=100)
+
+        btn5=Button(text="Task",cursor="hand2",font=("times new roman",15),width=40,height=5)                 
+        btn5.place(x=475,y=300)
+
+        btn6=Button(text="Log",cursor="hand2",font=("times new roman",15),width=40,height=5)                 
+        btn6.place(x=475,y=500)
 
 
 
